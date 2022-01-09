@@ -31,8 +31,7 @@ def storeData(data,symbol):
         contentsObject = {
             "ticker": ticker.upper(),
             "title": content.find('a',class_="result__a").text, 
-            "link": content.find('a',class_="result__a")["href"],
-            "snippet": content.find('div',class_="result__snippet").text
+            "link": content.find('a',class_="result__a")["href"]
             }
         contentsArr.append(contentsObject)
     # write to json file
