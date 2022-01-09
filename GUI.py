@@ -5,23 +5,22 @@ from tkinter import *
 
 class newsfeed:
     def __init__(self,gui):
-        # set a title
+        
         self.gui = gui
         self.gui.title("Newsfeed")
         self.gui.geometry("800x500")
         self.gui.configure(bg="grey20")
         
-        # make window sticky for NS(North and South)
+        # make window sticky
         self.gui.grid_columnconfigure(0, weight=1)
         self.gui.rowconfigure(2, weight=2)
         
         #--------Search Frame section----------------------------------------------------------------------
-        # create frame, search frame
+        # create search frame
         self.searchFrame = LabelFrame(gui,bg="grey20")
         self.sf = self.searchFrame
         self.sf.grid(row=0, sticky="ew")
-        
-        # make search frame sticky for every case
+       
         self.sf.grid_rowconfigure(0, weight=1)
         self.sf.grid_columnconfigure(0, weight=1)
     
@@ -39,8 +38,8 @@ class newsfeed:
                                relief="flat")
         search_button.grid(row=0,column=1)
         
-        #---------News Frame section-----------------------------------------------------------------------
-        # create frame, news frame
+        #---------News Frame labels section-----------------------------------------------------------------------
+        # create news frame
         self.newsFrame = LabelFrame(gui,bg="grey")
         self.nf = self.newsFrame
         self.nf.grid(row=1,column=0,sticky="nsew")
@@ -72,7 +71,7 @@ class newsfeed:
         with open('newsfeedData.json') as json_data:
             jsonData = json.load(json_data)
         
-        # create news frame 2
+        # create main news frame
         self.main_nframe = LabelFrame(self.gui, bg="grey20")
         self.mnf = self.main_nframe
         self.mnf.grid(row=2, column=0, sticky="nsew")
