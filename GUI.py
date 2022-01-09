@@ -141,7 +141,8 @@ class newsfeed:
     
     def resize_frame(self, e):
         self.my_canvas.itemconfig(self.frame, width=e.width)
-        
+
+# driver
 if __name__ == "__main__":
          
     # create a GUI window
